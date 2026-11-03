@@ -1,0 +1,597 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #ffa200, #ffdb4d);
+    font-family: 'Fredoka', sans-serif;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.page {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    position: absolute;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.page.active {
+    display: flex;
+}
+
+.title {
+    font-family: 'Fredoka', cursive;
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.section-title {
+    font-family: 'Fredoka', cursive;
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    color: #4a2e00;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.6);
+}
+
+/* Amplop */
+.envelope-box {
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.envelope-box:hover {
+    transform: scale(1.05);
+}
+
+.envelope {
+    width: 220px;
+    height: 140px;
+    background: #fff;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.seal {
+    width: 35px;
+    height: 35px;
+    background: #ff5722;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.subtitle {
+    margin-top: 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #5c3a00;
+}
+
+/* Menu Pilihan */
+.menu-items {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.menu-item {
+    background: rgba(255, 255, 255, 0.25);
+    padding: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    backdrop-filter: blur(5px);
+    width: 110px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.menu-item:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: translateY(-5px);
+}
+
+.menu-item .icon {
+    font-size: 2.5rem;
+}
+
+.menu-item p {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #4a2e00;
+}
+
+/* Tombol Kembali */
+.back-btn {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: #ff5722;
+    border: none;
+    color: white;
+    padding: 8px 22px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 100;
+}
+
+.back-btn:hover {
+    background: #e64a19;
+}
+
+/* Galeri Polaroid */
+.polaroid-gallery {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 800px;
+}
+
+.polaroid {
+    background: #fff;
+    padding: 12px 12px 25px 12px;
+    width: 170px;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: rotate(-3deg);
+    transition: transform 0.3s ease, z-index 0.3s;
+}
+
+.polaroid:nth-child(even) {
+    transform: rotate(3deg);
+}
+
+.polaroid:hover {
+    transform: scale(1.1) rotate(0deg);
+    z-index: 10;
+}
+
+.polaroid img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.polaroid p {
+    margin-top: 10px;
+    color: #4a2e00;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Styling Halaman Moment */
+.moment-scene {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 900px;
+    padding: 20px;
+    position: relative;
+}
+
+.moment-name-title {
+    font-family: 'Fredoka', cursive;
+    font-size: 2.8rem;
+    color: #4a2e00;
+    margin-bottom: 10px;
+    transform: rotate(-2deg);
+    align-self: flex-start;
+    margin-left: 50px;
+}
+
+.moment-content-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.nailong-mascot {
+    position: relative;
+    width: 120px;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: bounceNailong 2s infinite ease-in-out;
+}
+
+.nailong-mascot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.speech-bubble {
+    position: absolute;
+    top: -15px;
+    right: -10px;
+    background: #fff;
+    color: #4a2e00;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+@keyframes bounceNailong {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+.letter-with-roses {
+    position: relative;
+}
+
+.letter-paper-new {
+    background: #fffdf5;
+    color: #4a2e00;
+    width: 380px;
+    max-width: 90vw;
+    padding: 22px 25px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transform: rotate(-2deg);
+    text-align: left;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.gold-frame-container {
+    position: relative;
+    background: #ffb300;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    transform: rotate(3deg);
+}
+
+.gold-frame {
+    width: 160px;
+    height: 190px;
+    background: #fff;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.gold-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.frame-rose {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    font-size: 2rem;
+}
+
+.moment-footer-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.mini-music-btn {
+    background: #4a2e00;
+    color: #fff;
+    border: 2px solid #ffb300;
+    padding: 6px 16px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.vinyl-icon {
+    font-size: 1.2rem;
+    animation: spin 3s linear infinite;
+}
+
+.mini-camera-icon {
+    font-size: 1.8rem;
+    background: #4a2e00;
+    padding: 6px 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+/* ===== STYLING BARU: HALAMAN PLAYLIST LUAR ANGKASA (Gaya Referensi Gambar)[span_1](start_span)[span_1](end_span) ===== */
+.space-theme-page {
+    background: linear-gradient(135deg, #0b001a, #3b0066, #ff007f) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efek Roket Terbang & Planet di Luar Angkasa */
+.space-background-effects {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.flying-rocket {
+    position: absolute;
+    font-size: 3rem;
+    animation: flyRocket 8s linear infinite;
+    bottom: 10%;
+    left: -10%;
+}
+
+.floating-planet {
+    position: absolute;
+    font-size: 3.5rem;
+    top: 15%;
+    right: 10%;
+    animation: floatPlanet 4s ease-in-out infinite alternate;
+}
+
+@keyframes flyRocket {
+    0% { transform: translate(0, 0) rotate(45deg); opacity: 0; }
+    20% { opacity: 1; }
+    100% { transform: translate(120vw, -80vh) rotate(45deg); opacity: 0; }
+}
+
+@keyframes floatPlanet {
+    0% { transform: translateY(0) scale(1); }
+    100% { transform: translateY(-12px) scale(1.05); }
+}
+
+.space-layout-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 900px;
+    padding: 20px;
+}
+
+.space-main-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.space-player-box {
+    width: 440px;
+    max-width: 90vw;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.space-player-box iframe {
+    border-radius: 8px;
+    display: block;
+}
+
+/* Susunan Bingkai Foto Emas di Sisi Kanan (Sesuai Referensi Gambar)[span_2](start_span)[span_2](end_span) */
+.space-frames-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    gap: 12px;
+    position: relative;
+}
+
+.space-gold-frame {
+    background: #d4af37;
+    padding: 5px;
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+.space-gold-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 3px;
+    display: block;
+}
+
+.big-frame {
+    grid-column: span 2;
+    width: 140px;
+    height: 110px;
+    transform: rotate(2deg);
+}
+
+.small-frame-top {
+    width: 75px;
+    height: 75px;
+    transform: rotate(-3deg);
+}
+
+.small-frame-bottom {
+    width: 75px;
+    height: 75px;
+    transform: rotate(4deg);
+}
+
+/* Bagian Bawah: Radio, TV, & Nada Musik Neon[span_3](start_span)[span_3](end_span) */
+.space-bottom-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 550px;
+    padding: 0 10px;
+    margin-top: 10px;
+}
+
+.footer-gadgets {
+    display: flex;
+    gap: 15px;
+}
+
+.gadget-icon {
+    font-size: 2.2rem;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 8px 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.neon-music-notes {
+    font-size: 1.8rem;
+    letter-spacing: 6px;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
+    animation: bounceNeon 1.5s infinite alternate;
+}
+
+@keyframes bounceNeon {
+    from { transform: translateY(0); }
+    to { transform: translateY(-6px); }
+}
+
+/* Halaman Gift */
+.interactive-gift-box {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 35px 50px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px dashed #fff;
+}
+
+.interactive-gift-box:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.45);
+}
+
+.gift-body {
+    font-size: 5rem;
+    animation: bounceGift 1.2s infinite alternate;
+}
+
+.gift-instruction {
+    margin-top: 12px;
+    color: #4a2e00;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.gift-reveal-card {
+    display: none;
+    background: #fffdf5;
+    color: #4a2e00;
+    width: 380px;
+    max-width: 90vw;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    text-align: center;
+    animation: popIn 0.5s ease-in-out;
+}
+
+.reveal-img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #ffb300;
+    margin-bottom: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.gift-reveal-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+    color: #ff5722;
+}
+
+.gift-reveal-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.reset-gift-btn {
+    background: #ff5722;
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: background 0.3s;
+}
+
+.reset-gift-btn:hover {
+    background: #e64a19;
+}
+
+@keyframes bounceGift {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.7); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

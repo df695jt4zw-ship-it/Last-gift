@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kado Spesial Nailong Untukmu</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Halaman 1: Amplop Pembuka -->
+    <div id="page-envelope" class="page active">
+        <h1 class="title"> Hadiah spesial dari Nailong 💛</h1>
+        <div class="envelope-box" onclick="goToMenu()">
+            <div class="envelope">
+                <div class="seal"></div>
+            </div>
+        </div>
+        <p class="subtitle">tap untuk lanjut</p>
+    </div>
+
+    <!-- Halaman 2: Menu Pilih Kejutan -->
+    <div id="page-menu" class="page">
+        <h1 class="title">Pilih Sesuka mu cantik💛</h1>
+        <div class="menu-items">
+            <div class="menu-item" onclick="openSection('journey')">
+                <span class="icon">💌</span>
+                <p>25 april 2026</p>
+            </div>
+            <div class="menu-item" onclick="openSection('moment')">
+                <span class="icon">🦖</span>
+                <p> advice for u</p>
+            </div>
+            <div class="menu-item" onclick="openSection('playlist')">
+                <span class="icon">🎶</span>
+                <p>Playlist</p>
+            </div>
+            <div class="menu-item" onclick="openSection('gift')">
+                <span class="icon">🎁</span>
+                <p>Last Gift</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Halaman 3: Journey / Galeri Foto Nailong -->
+    <div id="page-journey" class="page">
+        <button class="back-btn" onclick="goToMenu()">BACK ◄</button>
+        <div class="content-container">
+            <h2 class="section-title">Nailong confess🦖💛</h2>
+            <div class="polaroid-gallery">
+                <div class="polaroid">
+                    <img src="foto1.jpg" alt="foto1">
+                    <p> Aku</p>
+                </div>
+                <div class="polaroid">
+                    <img src=" foto2.jpg" alt="foto2">
+                    <p> Cinta </p>
+                </div>
+                <div class="polaroid">
+                    <img src="foto3.jpg" alt="foto3">
+                    <p> Kamu</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Halaman 4: Moment / Surat, Bingkai Foto, & Karakter Nailong -->
+    <div id="page-moment" class="page">
+        <button class="back-btn" onclick="goToMenu()">BACK ◄</button>
+        <div class="moment-scene">
+            <h2 class="moment-name-title"> From nailong💔 </h2>
+            
+            <div class="moment-content-flex">
+                <div class="nailong-mascot">
+                    <img src="foto4.jpg" alt="foto4">
+                    <div class="speech-bubble">Hi! 💛</div>
+                </div>
+
+                <div class="letter-with-roses">
+                    <div class="letter-paper-new">
+                        <p>"Halo! Segemoy dan seceria nailong, semoga kamu bisa ngejalanin hidup yg lebih bahagia lagi walaupun udah ga sama aku, aku selalu berharap yg terbaik buat kamu. Aku masih blum tau alasan kamu secepet itu ngelupain. tapi gapapa ko aku udah ikhlas. and I love u in every universe💛 maybe someday we meet again and I hope u to be yourself"</p>
+                    </div>
+                </div>
+
+                <div class="gold-frame-container">
+                    <div class="gold-frame">
+                        <img src="foto5.jpg" alt="foto5">
+                    </div>
+                    <span class="frame-rose">⭐</span>
+                </div>
+            </div>
+
+            <div class="moment-footer-icons">
+                <div class="mini-music-btn">
+                    <div class="vinyl-icon">💽</div>
+                    <span>Nailong Song</span>
+                </div>
+                <div class="mini-camera-icon">🦖</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Halaman 5: Playlist / Tema Luar Angkasa (Layout Persis Gambar Referensi) -->
+    <div id="page-playlist" class="page space-theme-page">
+        <!-- Elemen Animasi Luar Angkasa (Roket & Bintang) -->
+        <div class="space-background-effects">
+            <div class="flying-rocket">🚀🚀🚀</div>
+            <div class="floating-planet">🪐</div>
+        </div>
+
+        <button class="back-btn" onclick="goToMenu()">BACK ◄</button>
+        
+        <div class="space-layout-container">
+            <!-- Bagian Atas: Pemutar YouTube di Kiri & Susunan Bingkai Emas di Kanan (Sesuai Referensi) -->
+            <div class="space-main-content">
+                <div class="space-player-box">
+                    <iframe width="100%" height="220" src="https://youtube.com/embed/wM66-6ISA-k" title="Space Playlist" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <div class="space-frames-grid">
+                    <div class="space-gold-frame big-frame">
+                        <img src="foto6.jpg" alt="Foto6">
+                    </div>
+                    <div class="space-gold-frame small-frame-top">
+                        <img src="foto7.jpg" alt="Foto7">
+                    </div>
+                    <div class="space-gold-frame small-frame-bottom">
+                        <img src="foto8.jpg" alt="Foto8">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bagian Bawah: Radio, TV, dan Hiasan Nada Musik Neon (Sesuai Referensi) -->
+            <div class="space-bottom-footer">
+                <div class="footer-gadgets">
+                    <span class="gadget-icon">📻</span>
+                    <span class="gadget-icon">📺</span>
+                </div>
+                <div class="neon-music-notes">
+                    🎶 🎵 🎶 🎵 🎶
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Halaman 6: Gift Interaktif -->
+    <div id="page-gift" class="page">
+        <button class="back-btn" onclick="goToMenu()">BACK ◄</button>
+        <div class="content-container">
+            <h2 class="section-title">Last Gift For You</h2>
+            
+            <div class="interactive-gift-box" id="giftBox" onclick="openGiftBox()">
+                <div class="gift-lid"></div>
+                <div class="gift-body">🎁</div>
+                <p class="gift-instruction" id="giftInstruction">Ketuk untuk membuka!</p>
+            </div>
+
+            <div class="gift-reveal-card" id="giftReveal">
+                <img src="foto9.jpg" alt="foto9" class="reveal-img">
+                <h3>Thanks and goodbye! 🎉</h3>
+                <p> Thank you for your time. Thank you for reading everything. I hope you listen to the song, too. This is the last time I’ll be creating something like this or speaking to you, so thank you for everything. It’s sad to put this together—I actually started it a long time ago but hadn’t finished it until now. By the time I finally continued working on it, we were no longer together. I love you more than anything. And thank you.💛🦖</p>
+                <button class="reset-gift-btn" onclick="resetGift()">Tutup Kado Lagi</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
